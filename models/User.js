@@ -16,11 +16,7 @@ User.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    first_name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    last_name: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -38,18 +34,6 @@ User.init(
       validate: {
         len: [8],
       },
-    },
-    city: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    status: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    job_title: {
-      type: DataTypes.STRING,
-      allowNull: false,
     },
   },
   {
