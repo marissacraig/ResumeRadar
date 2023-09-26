@@ -12,11 +12,11 @@ Application.belongsTo(User, {
 });
 
 // each application associated with one job
-Application.hasOne(Job, {
+Application.belongsTo(Job, {
   foreignKey: 'job_id',
   onDelete: 'RESTRICT',
 });
-Job.belongsTo(Application, {
+Job.hasOne(Application, {
   foreignKey: 'job_id',
   onDelete: 'CASCADE',
 });
