@@ -31,9 +31,9 @@ router.get('/', async (req, res) => {
 router.get('/dashboard', async (req, res) => {
   try {
     const applicationData = await Application.findAll({
-      where: {
-        user_id: req.session.user_id
-      },
+      // where: {
+      //   user_id: req.session.user_id
+      // },
       include: [
         {
           model: Job,
@@ -45,7 +45,8 @@ router.get('/dashboard', async (req, res) => {
 
     res.render('dashboard', {
       applications,
-      logged_in: req.session.logged_in
+      logged_in: req.session.logged_in,
+      layout: false
     });
   } catch (err) {
     console.log(err);
