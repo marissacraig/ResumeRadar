@@ -15,7 +15,8 @@ Job.belongsTo(User, {
   onDelete: 'cascade',
 });
 Application.belongsTo(User, {
-  foreignKey: 'user_id'
+  foreignKey: 'user_id',
+  onDelete: 'cascade',
 });
 
 module.exports = { User, Application, Job };
