@@ -15,75 +15,83 @@
       crossorigin="anonymous"
     />
   </head>
-
   <body>
-    <div>
       <header>
-        <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="secondary">
           <div class="container-fluid">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="/">
               <img
                 src="/ResumeRadar/Assets/RR LOGO.png"
                 alt="Logo"
-                width="40"
-                height="40"
+                width="60"
+                height="60"
               />
             </a>
-          </div>
+            <h5 class="" style="max-width: 20rem;">RESUME RADAR</h5>
           <!-- Conditionally render links -->
           <!-- {{#if logged_in}} -->
-          <div class="collapse navbar-collapse" id="navbarColor02">
+          <button class="navbar-toggler btn-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-label="Toggle navigation">
+            <span class="navbar-toggler-header">MENU</span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav me-auto">
              <li class="nav-item">
-              <a class="nav-link" href="../homepage.handlebars">HOMEPAGE
+              <a class="nav-link" href="/">HOMEPAGE
               </a>
              </li>
-             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Separated link</a>
-                </div>
+             <li class="nav-item">
+                <a class="nav-link" href="#">Action</a>
+             </li>
+             <li class="nav-item">
+                <a class="nav-link" href="#">Another action</a>
+             </li>
+             <li class="nav-item">
+                <a class="nav-link" href="#">Something else here</a>
              </li>
             </ul>
            </div>
+           </div>
           </nav>
         </div>
-            <!-- {{else}} -->
-            <!-- Conditionally render login -->
-            <form class="container-md align-items-center">
-              <div class="g-3 align-items-center input-group m-2">
-                <div class="col-auto">
-                  <label for="inputUsername6" class="col-form-label">Username</label>
-                </div>
-                <div class="col-auto">
-                  <input type="username" id="inputUsername6" class="form-control" aria-describedby="usernameHelpInline">
-                </div>
-              </div>
-              <div class="g-3 align-items-center input-group m-2">
-                <div class="col-auto">
-                  <label for="inputPassword6" class="col-form-label">Password</label>
-                </div>
-                <div class="col-auto">
-                  <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
-                </div>
-                <div class="col-auto">
-                  <span id="passwordHelpInline" class="form-text">
-                    Must be 8-20 characters long.
-                  </span>
-                </div>
-              </div>
-            </form>
-            <!-- {{/if}} -->
-          </div>
-        </nav>
       </header>
-      <main></main>
-      <footer></footer>
-    </div>
+      <!-- {{else}} -->
+      <!-- Conditionally render login -->
+      <main>
+       <container class="container-fluid">
+        <form class="card m-5 border-primary position-absolute top-50 start-50 translate-middle" style="max-width: 20rem;">
+          <div class="card-body">
+           <h1 class="card-title">LOGIN</h1>
+            <div class="g-3 align-items-center input-group m-2">
+             <div class="col-auto">
+              <label for="inputUsername6" class="col-form-label card-text">Username</label>
+             </div>
+             <div class="col-auto">
+              <input type="username" id="inputUsername6" class="form-control" aria-describedby="usernameHelpInline">
+             </div>
+            </div>
+            <div class="g-3 align-items-center input-group m-2">
+             <div class="col-auto">
+              <label for="inputPassword6" class="col-form-label card-text">Password</label>
+             </div>
+             <div class="col-auto">
+              <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+             </div>
+             <div class="col-auto">
+              <span id="passwordHelpInline" class="form-text card-text">
+                Must be 8-20 characters long.
+              </span>
+            </div>
+           </div>
+          </div>
+         </div>
+        </form>
+      </container>
+      <!-- {{/if}} -->
+      </main>
+      <footer>
+
+      </footer>
+   
 
     <!-- Bootstrap JavaScript Bundle link -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
