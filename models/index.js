@@ -4,11 +4,11 @@ const Application = require('./Application');
 
 User.hasMany(Application, {
   foreignKey: 'user_id',
-  onDelete: 'CASCADE'
+  onDelete: 'CASCADE',
 });
 User.hasMany(Job, {
   foreignKey: 'user_id',
-  onDelete: 'CASCADE'
+  onDelete: 'CASCADE',
 });
 Job.belongsTo(User, {
   foreignKey: 'user_id',
@@ -16,7 +16,6 @@ Job.belongsTo(User, {
 });
 Application.belongsTo(User, {
   foreignKey: 'user_id',
-  onDelete: 'cascade',
 });
 
 module.exports = { User, Application, Job };
