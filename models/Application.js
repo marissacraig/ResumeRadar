@@ -12,8 +12,7 @@ Application.init(
       autoIncrement: true,
     },
     status: {
-      type: DataTypes.STRING,
-      allowNull: false,
+      type: DataTypes.BOOLEAN,
     },
     user_id: {
       type: DataTypes.INTEGER,

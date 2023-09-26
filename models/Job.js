@@ -16,11 +16,15 @@ Job.init(
       allowNull: false,
     },
     description: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     salary: {
       type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    city: {
+      type: DataTypes.STRING,
       allowNull: false,
     },
   },
