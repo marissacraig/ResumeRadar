@@ -4,22 +4,8 @@ const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-    // Get all projects and JOIN with user data
-    const projectData = await Project.findAll({
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-      ],
-    });
-
-    // Serialize data so the template can read it
-    const projects = projectData.map((project) => project.get({ plain: true }));
-
     // Pass serialized data and session flag into template
-    res.render('homepage', {
-      projects,
+    res.render('layouts/main', {
       logged_in: req.session.logged_in,
     });
   } catch (err) {
@@ -27,8 +13,17 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/project/:id', async (req, res) => {
+router.get('/dashboard', async (req, res) => {
+  
+});
+
+router.get('/application/new', async (req, res) -> {
+
+})
+
+router.get('/application/:id', async (req, res) => {
   try {
+    // TODO get aplication data and render application-details page
     const projectData = await Project.findByPk(req.params.id, {
       include: [
         {
