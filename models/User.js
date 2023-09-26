@@ -16,11 +16,7 @@ User.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    first_name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    last_name: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -39,18 +35,6 @@ User.init(
         len: [8],
       },
     },
-    city: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    status: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    job_title: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
   },
   {
     hooks: {
@@ -59,7 +43,10 @@ User.init(
         return newUserData;
       },
       beforeUpdate: async (updatedUserData) => {
-        updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
+        updatedUserData.password = await bcrypt.hash(
+          updatedUserData.password,
+          10
+        );
         return updatedUserData;
       },
     },

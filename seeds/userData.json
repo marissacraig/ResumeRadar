@@ -1,1 +1,7 @@
-
+[
+    {
+      "name": "user_test",
+      "email": "user_text@gmail.com",
+      "password": "password"
+    }
+  ]
