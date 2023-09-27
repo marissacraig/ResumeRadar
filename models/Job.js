@@ -17,16 +17,16 @@ Job.init(
     },
     description: {
       type: DataTypes.STRING,
-      allowNull: false,
     },
     salary: {
       type: DataTypes.INTEGER,
-      allowNull: false,
     },
     location: {
       type: DataTypes.STRING,
-      allowNull: false,
     },
+    url: {
+      type: DataTypes.STRING,
+    }
   },
   {
     sequelize,
