@@ -60,11 +60,57 @@
       <div class="text-center p-2">
         <h4>New Application</h4>
         <div class="container d-grid gap-2 col-6" role="group" aria-label="">
-        
-          <div class="form-block">
-            <label for="textarea" class="form-label mt-4">Job Description</label>
-            <textarea class="form-control" id="exampleTextarea" rows="4" placeholder="Copy and Paste job description here"></textarea>
-        </div>
+            <div class="form-group">
+                <label for="jobTitle" class="form-label mt-4">Choose a Job Title</label>
+                <select class="form-select" id="jobTitle" name="jobTitles">
+                  <option>Front-end Software Developer</option>
+                  <option>Back-end Software Developer</option>
+                  <option>Full-stack Software Developer</option>
+                  <option>Software Engineer</option>
+                  <option>Network Administrator</option>
+                  <option>Web Developer</option>
+                  <option>Systems Analyst</option>
+                  <option>Quality Assurance Engineer</option>
+                  <option>Database Administrator</option>
+                  <option>PHP Developer</option>
+                  <option>Software Test Engineer</option>
+                  <option>Security Engineer</option>
+                  <option>Java Developer</option>
+                  <option>Hardware Engineer</option>
+                  <option>Python Developer</option>
+                  <option>Lead Developer</option>
+                  <option>Mobile Developer</option>
+                  <option>Development Operations Engineer</option>
+                  <option>Chief Technology Officer</option>
+                  <option>Software Architect</option>
+                  <option value="other">Other</option>
+                    {{if value="other"}}
+                    <input type="text" class="form-control" placeholder="Please specify Job Title" id="inputDefault">
+                    {{/if}}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleSelect1" class="form-label mt-4">Example select</label>
+                <select class="form-select" id="exampleSelect1">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div class="form-block">
+                <label for="textarea" class="form-label mt-4">Job Description</label>
+                <textarea class="form-control" id="exampleTextarea" rows="4" placeholder="Copy and Paste job description here"></textarea>
+            </div>
+            <div class="form-block">
+                <label for="textarea" class="form-label mt-4">Job Description</label>
+                <textarea class="form-control" id="exampleTextarea" rows="4" placeholder="Copy and Paste job description here"></textarea>
+            </div>
+            <div class="form-block">
+                <label for="textarea" class="form-label mt-4">Job Description</label>
+                <textarea class="form-control" id="exampleTextarea" rows="4" placeholder="Copy and Paste job description here"></textarea>
+            </div>
         </div>
       </div>
       </main>
