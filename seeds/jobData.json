@@ -2,8 +2,10 @@
 [
     {
       "title": "Software Engineer",
+      "company": "Google",
       "description": "Use programming languages like Python, Java, C++, and others to implement the design.",
       "salary": 100000,
-      "city": "San Diego"
+      "location": "San Diego",
+      "url": "https://www.linkedin.com/jobs/view/staff-software-engineer-watch-system-software-pixel-at-google-3711772760?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic"
     }
   ]
