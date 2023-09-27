@@ -23,7 +23,7 @@ Job.init(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    city: {
+    location: {
       type: DataTypes.STRING,
       allowNull: false,
     },
