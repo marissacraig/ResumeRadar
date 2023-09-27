@@ -13,51 +13,37 @@ router.get('/', async (req, res) => {
   }
 });
 
-// Load signup page
-router.get('/signup', async (req, res) => {
+
+// Load dashboard displaying all of logged in user's applications
+router.get('/dashboard', async (req, res) => {
   try {
-      // if user is already signed in, redirect to main
-      if (req.session.logged_in) {
-        res.redirect('/');
-        return;
-      }
-    res.render('signup.html', {
+    const applicationData = await Application.findAll({
+      // where: {
+      //   user_id: req.session.user_id
+      // },
+      include: [
+        {
+          model: Job,
+        }
+      ]
+    });
+
+    const applications = applicationData.map((application) => application.get({ plain: true }));
+
+    res.render('dashboard', {
+      applications,
       logged_in: req.session.logged_in,
+      layout: false
     });
   } catch (err) {
-    res.status(500).json(err);
-  }
-})
-
-// Use withAuth middleware to prevent access to route
-router.get('/profile', withAuth, async (req, res) => {
-  try {
-    // Find the logged in user based on the session ID
-    const userData = await User.findByPk(req.session.user_id, {
-      attributes: { exclude: ['password'] },
-      include: [{ model: Project }],
-    });
-
-    const user = userData.get({ plain: true });
-
-    res.render('profile', {
-      ...user,
-      logged_in: true,
-    });
-  } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
 
-// login.handlebars being replaced my main.handlebars
-// router.get('/login', (req, res) => {
-//   // If the user is already logged in, redirect the request to another route
-//   if (req.session.logged_in) {
-//     res.redirect('/profile');
-//     return;
-//   }
+router.get('/project/:id', async (req, res) => {
 
-//   res.render('login');
-// });
+// Load signup page
+router.get('/signup', async (req, res) => {
 
-module.exports = router;
+
