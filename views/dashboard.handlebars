@@ -8,7 +8,7 @@
     </a>
   </div>
   <div>
-    <table class="table">
+    <table class="table table-hover">
       <thead>
         <tr>
           <th scope="col">Job Title</th>
@@ -21,37 +21,35 @@
       <tbody>
         {{#if applications.length}}
         {{#each applications as |application|}}
-        <a href="/application/{{id}}">
-          <tr>
-            <td>
-              <span class="post-title m-2">
-                {{job.title}}
-              </span>
-            </td>
-            <td>
-              <span>
-                {{job.company}}
-              </span>
-            </td>
-            <td>
-              <span class="post-creator">
-                {{status}}
-              </span>
-            </td>
-            <td>
-              <span>
-                {{job.location}}
-              </span>
-            </td>
-            <td>
-              <span>
-                <a href={{job.url}}>Link</a>
-              </span>
-            </td>
-          </tr>
-        </a>
-    {{/each}}
-    </tbody>
+        <tr style="cursor: pointer; cursor: hand;" onclick="document.location='/application/{{id}}'">
+          <td>
+            <span class="post-title m-2">
+              {{job.title}}
+            </span>
+          </td>
+          <td>
+            <span>
+              {{job.company}}
+            </span>
+          </td>
+          <td>
+            <span class="post-creator">
+              {{status}}
+            </span>
+          </td>
+          <td>
+            <span>
+              {{job.location}}
+            </span>
+          </td>
+          <td>
+            <span>
+              <a href={{job.url}}>Link</a>
+            </span>
+          </td>
+        </tr>
+        {{/each}}
+      </tbody>
     </table>
     {{else}}
     <div>
