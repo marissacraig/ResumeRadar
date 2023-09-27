@@ -32,7 +32,7 @@
       <div class="collapse navbar-collapse" id="navbarColor01">
         <ul class="navbar-nav me-auto">
           <li class="nav-item">
-            <a class="nav-link" href="/">HOMEPAGE
+            <a class="nav-link" href="#">HOMEPAGE
             </a>
           </li>
           <li class="nav-item">
@@ -46,58 +46,22 @@
           </li>
         </ul>
       </div>
+      {{else}}
+        <a class="nav-link btn" href="/login">login</a>
       {{/if}}
       </div>
     </nav>
     </div>
   </header>
-  <main>
+  <main class="container container-fluid mt-5">
+    <!-- Render the sub layout -->
+    {{{ body }}}
 
   </main>
-  {{#unless logged_in}}
-  <!-- Conditionally render login -->
-  <main>
-    <container class="container-fluid">
-      <div>
-        <form class="login-form card m-5 border-primary translate-middle"
-          style="max-width: 20rem;">
-          <div class="card-body">
-            <h1 class="card-title">LOGIN</h1>
-            <div class="g-3 align-items-center input-group m-2">
-              <div class="col-auto">
-                <label for="inputUsername6" class="col-form-label card-text">Username</label>
-              </div>
-              <div class="col-auto">
-                <input type="username" id="inputUsername6" class="form-control" aria-describedby="usernameHelpInline">
-              </div>
-            </div>
-            <div class="g-3 align-items-center input-group m-2">
-              <div class="col-auto">
-                <label for="inputPassword6" class="col-form-label card-text">Password</label>
-              </div>
-              <div class="col-auto">
-                <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
-              </div>
-              <div class="col-auto">
-                <span id="passwordHelpInline" class="form-text card-text">
-                  Must be 8-20 characters long.
-                </span>
-              </div>
-            </div>
-            <div class="d-grid gap-2 col-6 mx-auto">
-              <button class="btn" type="submit">LOG IN</button>
-            </div>
-          </div>
-        </form>
-      </div>
-      <div class="d-grid gap-2 col-12 mx-auto">
-        <a href="/signup"><button class="btn" type="button">SIGN UP</button></a>
-      </div>
-    </container>
-  </main>
-
-  <script src="./js/login.js"></script>
-  {{/unless}}
+    <!-- Render script for logged in users only -->
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
   <!-- Bootstrap JavaScript Bundle link -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
