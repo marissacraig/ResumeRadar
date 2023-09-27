@@ -32,8 +32,7 @@ router.get('/dashboard', async (req, res) => {
 
     res.render('dashboard', {
       applications,
-      logged_in: req.session.logged_in,
-      layout: false
+      logged_in: req.session.logged_in
     });
   } catch (err) {
     console.log(err);
