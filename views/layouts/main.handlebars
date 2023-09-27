@@ -1,100 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Resume Radar</title>
-    <link rel="icon" type="image/x-icon" href="/ResumeRadar/Assets/RR LOGO.png">
-    <link rel="stylesheet" href="/css/jass.css" />
-    <link rel="stylesheet" href="/css/style.css" />
-    <!-- Bootstrap minified CSS link-->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/lux/bootstrap.min.css"
-      integrity="sha384-9+PGKSqjRdkeAU7Eu4nkJU8RFaH8ace8HGXnkiKMP9I9Te0GJ4/km3L1Z8tXigpG"
-      crossorigin="anonymous"
-    />
-  </head>
-  <body>
-      <header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="secondary">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="/">
-              <img
-                src="./Assets/RR LOGO.png"
-                alt="Logo"
-                width="60"
-                height="60"
-              />
-            </a>
-            <h5 class="m-5" style="max-width: 20rem;">RESUME RADAR</h5>
-          <!-- Conditionally render links -->
-          {{#if logged_in}}
-          <button class="navbar-toggler btn-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-label="Toggle navigation">
-            <span class="navbar-toggler-header">MENU</span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarColor01">
-            <ul class="navbar-nav me-auto">
-             <li class="nav-item">
-              <a class="nav-link" href="/">HOMEPAGE
-              </a>
-             </li>
-             <li class="nav-item">
-                <a class="nav-link" href="#">DASHBOARD</a>
-             </li>
-             <li class="nav-item">
-                <a class="nav-link" href="#">RESUME REVIEW</a>
-             </li>
-             <li class="nav-item">
-                <a class="nav-link" href="#">SETTINGS</a>
-             </li>
-            </ul>
-           </div>
-           </div>
-          </nav>
-        </div>
-      </header>
-      <main>
 
-      </main>
-      {{else}}
-      <!-- Conditionally render login -->
-      <main>
-       <container class="container-fluid">
-        <form class="card m-5 border-primary position-absolute top-50 start-50 translate-middle" style="max-width: 20rem;">
-          <div class="card-body">
-           <h1 class="card-title">LOGIN</h1>
-            <div class="g-3 align-items-center input-group m-2">
-             <div class="col-auto">
-              <label for="inputUsername6" class="col-form-label card-text">Username</label>
-             </div>
-             <div class="col-auto">
-              <input type="username" id="inputUsername6" class="form-control" aria-describedby="usernameHelpInline">
-             </div>
-            </div>
-            <div class="g-3 align-items-center input-group m-2">
-             <div class="col-auto">
-              <label for="inputPassword6" class="col-form-label card-text">Password</label>
-             </div>
-             <div class="col-auto">
-              <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
-             </div>
-             <div class="col-auto">
-              <span id="passwordHelpInline" class="form-text card-text">
-                Must be 8-20 characters long.
-              </span>
-            </div>
-           </div>
-           <div class="d-grid gap-2 col-6 mx-auto">
-            <button class="btn" type="button">SIGN UP</button>
-           </div>
-          </div>
-         </div>
-        </form>
-      </container>
-      </main>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume Radar</title>
+  <link rel="icon" type="image/x-icon" href="/ResumeRadar/Assets/RR LOGO.png">
+  <link rel="stylesheet" href="/css/jass.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <!-- Bootstrap minified CSS link-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/lux/bootstrap.min.css"
+    integrity="sha384-9+PGKSqjRdkeAU7Eu4nkJU8RFaH8ace8HGXnkiKMP9I9Te0GJ4/km3L1Z8tXigpG" crossorigin="anonymous" />
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="secondary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          <img src="./Assets/RR LOGO.png" alt="Logo" width="60" height="60" />
+        </a>
+        <div class="m-auto justify-content-center">
+          <h5 class="m-5" style="max-width: 20rem;">RESUME RADAR</h5>
+        </div>
+      <!-- Conditionally render links -->
+      {{#if logged_in}}
+      <button class="navbar-toggler btn-secondary" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-label="Toggle navigation">
+        <span class="navbar-toggler-header">MENU</span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/">HOMEPAGE
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">DASHBOARD</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">RESUME REVIEW</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">SETTINGS</a>
+          </li>
+        </ul>
+      </div>
       {{/if}}
-    <!-- Bootstrap JavaScript Bundle link -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
+      </div>
+    </nav>
+    </div>
+  </header>
+  <main>
+
+  </main>
+  {{#unless logged_in}}
+  <!-- Conditionally render login -->
+  <main>
+    <container class="container-fluid">
+      <div>
+        <form class="card m-5 border-primary translate-middle"
+          style="max-width: 20rem;">
+          <div class="card-body">
+            <h1 class="card-title">LOGIN</h1>
+            <div class="g-3 align-items-center input-group m-2">
+              <div class="col-auto">
+                <label for="inputUsername6" class="col-form-label card-text">Username</label>
+              </div>
+              <div class="col-auto">
+                <input type="username" id="inputUsername6" class="form-control" aria-describedby="usernameHelpInline">
+              </div>
+            </div>
+            <div class="g-3 align-items-center input-group m-2">
+              <div class="col-auto">
+                <label for="inputPassword6" class="col-form-label card-text">Password</label>
+              </div>
+              <div class="col-auto">
+                <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+              </div>
+              <div class="col-auto">
+                <span id="passwordHelpInline" class="form-text card-text">
+                  Must be 8-20 characters long.
+                </span>
+              </div>
+            </div>
+            <div class="d-grid gap-2 col-6 mx-auto">
+              <button class="btn" type="submit">LOG IN</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="d-grid gap-2 col-12 mx-auto">
+        <button class="btn" type="button">SIGN UP</button>
+      </div>
+    </container>
+  </main>
+  {{/unless}}
+  <!-- Bootstrap JavaScript Bundle link -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
 </html>
