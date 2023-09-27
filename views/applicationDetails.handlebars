@@ -1,88 +1,30 @@
-   <div class="text-center p-2">
-        <form>
-          <h4>New Application</h4>
-            <div class="container d-grid gap-2 col-6" role="group" aria-label="">
-                <div class="form-group">
-                    <label for="jobTitle" class="form-label mt-4">Choose a Job Title</label>
-                    <select class="form-select" id="jobTitle" name="jobTitles">
-                        <option value="">Please Choose One...</option>
-                        <option>Front-end Software Developer</option>
-                        <option>Back-end Software Developer</option>
-                        <option>Full-stack Software Developer</option>
-                        <option>Software Engineer</option>
-                        <option>Network Administrator</option>
-                        <option>Web Developer</option>
-                        <option>Systems Analyst</option>
-                        <option>Quality Assurance Engineer</option>
-                        <option>Database Administrator</option>
-                        <option>PHP Developer</option>
-                        <option>Software Test Engineer</option>
-                        <option>Security Engineer</option>
-                        <option>Java Developer</option>
-                        <option>Hardware Engineer</option>
-                        <option>Python Developer</option>
-                        <option>Lead Developer</option>
-                        <option>Mobile Developer</option>
-                        <option>Development Operations Engineer</option>
-                        <option>Chief Technology Officer</option>
-                        <option>Software Architect</option>
-                        <option>Other
-                        {{#if option="Other"}}
-                        <input type="text" class="form-control" placeholder="Please specify Job Title" id="otherJobTitle">
-                        {{/if}}
-                        </option>
-                    </select>
+<section class="p-2">
+            <div class="container d-grid gap-2 col-10" role="group" aria-label="">
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button type="button" class="btn btn-primary rounded-pill" href="#">
+                        EDIT APPLICATION
+                    </button>
                 </div>
-                <div class="form-group">
-                    <label for="company" class="form-label mt-4">Hiring Company</label>
-                    <select class="form-select" id="company">
-                        <option value="">Please Choose One...</option>
-                        <option>Google</option>
-                        <option>Apple</option>
-                        <option>Facebook</option>
-                        <option>Qualcomm</option>
-                        <option>BAE Systems</option>
-                        <option>Intuit</option>
-                        <option>GoFundMe</option>
-                        <option>AlwaysAI</option>
-                        <option>Other
-                        {{#if option="Other"}}
-                        <input type="text" class="form-control" placeholder="Please specify Job Company" id="otherCompany">
-                        {{/if}}
-                    </option>
-                    </select>
-                </div>
-                <div class="form-block">
-                    <label for="applicationStatus" class="form-label mt-4">Application Status</label>
-                    <select class="form-select" id="applicationStatus">
-                        <option value="">Please Choose One...</option>
-                        <option>Not Applied</option>
-                        <option>Applied and awaiting response</option>
-                        <option>Scheduled first interview</option>
-                        <option>Scheduled second interview</option>
-                        <option>I am no longer interested</option>
-                        <option>Company did not hire me</option>
-                        <option>Other
-                        {{#if option="Other"}}
-                        <input type="text" class="form-control" placeholder="Please specify Job Company" id="otherCompany">
-                        {{/if}}
-                    </option>
-                    </select>
-                <div class="form-block">
-                    <label for="jobLocation" class="form-label mt-4">Job Location</label>
-                    <input class="form-control" id="jobLocation" placeholder="Enter job location here"></input>
-                </div>
-                <div class="form-block">
-                    <label for="companyURL" class="form-label mt-4">Company Website</label>
-                    <input class="form-control" id="companyURL" placeholder="Copy and Paste company website here"></input>
-                </div>
-                <div class="form-block">
-                    <label for="textarea" class="form-label mt-4">Job Description</label>
-                    <textarea class="form-control" id="textarea" rows="4" placeholder="Copy and Paste job description here"></textarea>
-                </div>
-            </div>
-            <button type="submit" class="btn btn-primary m-4" href="#">
-                Submit
-            </button>
-        </form>
-      </div>
+                <h3 class="m-6">
+                    {{application.jobTitle}}
+                </h3>
+                <h5 class="mt-4">
+                   {{ application.company }} - {{ application.location }}
+                </h5>
+                <h6 class="mt-4">
+                    {{ application.salary }}
+                </h6>
+                <h6 class="mt-4">
+                    Description
+                </h6>
+                    <p>
+                        {{ application.description }}
+                    </p>
+                <h6 class="mt-4"><a href="{{ application.companyURL }}">
+                    {{ application.companyURL }}
+                </a></h6>
+                <h6 class="mt-4">
+                    {{ application.status }}
+                </h6>
+                
+        </section>
