@@ -1,42 +1,40 @@
-<div class='row'>
-  <div class='col-md-6'>
-    <h2>Login</h2>
 
-    <form class='form login-form'>
-      <div class='form-group'>
-        <label for='email-login'>email:</label>
-        <input class='form-input' type='text' id='email-login' />
+    <container class="container-fluid">
+      <div>
+        <form class="login-form card m-5 border-primary translate-middle"
+          style="max-width: 20rem;">
+          <div class="card-body">
+            <h1 class="card-title">LOGIN</h1>
+            <div class="g-3 align-items-center input-group m-2">
+              <div class="col-auto">
+                <label for="inputUsername6" class="col-form-label card-text">Username</label>
+              </div>
+              <div class="col-auto">
+                <input type="username" id="inputUsername6" class="form-control" aria-describedby="usernameHelpInline">
+              </div>
+            </div>
+            <div class="g-3 align-items-center input-group m-2">
+              <div class="col-auto">
+                <label for="inputPassword6" class="col-form-label card-text">Password</label>
+              </div>
+              <div class="col-auto">
+                <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+              </div>
+              <div class="col-auto">
+                <span id="passwordHelpInline" class="form-text card-text">
+                  Must be 8-20 characters long.
+                </span>
+              </div>
+            </div>
+            <div class="d-grid gap-2 col-6 mx-auto">
+              <button class="btn" type="submit">LOG IN</button>
+            </div>
+          </div>
+        </form>
       </div>
-      <div class='form-group'>
-        <label for='password-login'>password:</label>
-        <input class='form-input' type='password' id='password-login' />
+      <div class="d-grid gap-2 col-12 mx-auto">
+        <a href="/signup"><button class="btn" type="button">SIGN UP</button></a>
       </div>
-      <div class='form-group'>
-        <button class='btn btn-primary' type='submit'>login</button>
-      </div>
-    </form>
-  </div>
-  <div class='col-md-6'>
-    <h2>Signup</h2>
-
-    <form class='form signup-form'>
-      <div class='form-group'>
-        <label for='name-signup'>name:</label>
-        <input class='form-input' type='text' id='name-signup' />
-      </div>
-      <div class='form-group'>
-        <label for='email-signup'>email:</label>
-        <input class='form-input' type='text' id='email-signup' />
-      </div>
-      <div class='form-group'>
-        <label for='password-signup'>password:</label>
-        <input class='form-input' type='password' id='password-signup' />
-      </div>
-      <div class='form-group'>
-        <button class='btn btn-primary' type='submit'>signup</button>
-      </div>
-    </form>
-  </div>
-</div>
-
-<script src='./js/login.js'></script>
+    </container>
+ 
+  <script src="./js/login.js"></script>
