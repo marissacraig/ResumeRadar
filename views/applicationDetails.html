@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume Radar</title>
+    <link rel="icon" type="image/x-icon" href="/ResumeRadar/Assets/RR LOGO.png">
+    <link rel="stylesheet" href="/css/jass.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <!-- Bootstrap minified CSS link-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/lux/bootstrap.min.css"
+      integrity="sha384-9+PGKSqjRdkeAU7Eu4nkJU8RFaH8ace8HGXnkiKMP9I9Te0GJ4/km3L1Z8tXigpG"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+      <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="secondary">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+              <img
+                src="/ResumeRadar/Assets/RR LOGO.png"
+                alt="Logo"
+                width="60"
+                height="60"
+              />
+            </a>
+            <h5 class="m-5" style="max-width: 20rem;">RESUME RADAR</h5>
+          <!-- Conditionally render links -->
+          <!-- {{#if logged_in}} -->
+          <button class="navbar-toggler btn-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-label="Toggle navigation">
+            <span class="navbar-toggler-header">MENU</span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav me-auto">
+             <li class="nav-item">
+              <a class="nav-link" href="/">HOMEPAGE
+              </a>
+             </li>
+             <li class="nav-item">
+              <a class="nav-link" href="#">DASHBOARD</a>
+             </li>
+             <li class="nav-item">
+              <a class="nav-link" href="#">RESUME REVIEW</a>
+             </li>
+             <li class="nav-item">
+              <a class="nav-link" href="#">SETTINGS</a>
+           </li>
+            </ul>
+           </div>
+           </div>
+          </nav>
+        </div>
+      </header>
+      <!-- {{else}} -->
+      <!-- Conditionally render login -->
+      <main>
+       <section class="p-2">
+            <div class="container d-grid gap-2 col-10" role="group" aria-label="">
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button type="button" class="btn btn-primary rounded-pill" href="#">
+                        EDIT APPLICATION
+                    </button>
+                </div>
+                <h3 class="m-6">
+                    {{application.jobTitle}}
+                </h3>
+                <h5 class="mt-4">
+                   {{ application.company }} - {{ application.location }}
+                </h5>
+                <h6 class="mt-4">
+                    {{ application.salary }}
+                </h6>
+                <h6 class="mt-4">
+                    Description
+                </h6>
+                    <p>
+                        {{ application.description }}
+                    </p>
+                <h6 class="mt-4"><a href="{{ application.companyURL }}">
+                    {{ application.companyURL }}
+                </a></h6>
+                <h6 class="mt-4">
+                    {{ application.status }}
+                </h6>
+                
+        </section>
+      </main>
+    <!-- Bootstrap JavaScript Bundle link -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
