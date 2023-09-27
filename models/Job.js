@@ -15,18 +15,22 @@ Job.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    description: {
+    company: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    description: {
+      type: DataTypes.STRING,
     },
     salary: {
       type: DataTypes.INTEGER,
-      allowNull: false,
     },
-    city: {
+    location: {
       type: DataTypes.STRING,
-      allowNull: false,
     },
+    url: {
+      type: DataTypes.STRING,
+    }
   },
   {
     sequelize,

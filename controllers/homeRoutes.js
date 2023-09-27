@@ -46,5 +46,4 @@ router.get('/project/:id', async (req, res) => {})
 // Load signup page
 router.get('/signup', async (req, res) => {})
 
-
 module.exports = router;
