@@ -1,0 +1,26 @@
+<!-- Loop over each object in the jobs array -->
+{{#each jobs as |job|}}
+<div class="row mb-4 job">
+  <div class="col-md-5">
+    <h2>
+      <!-- Call helper function with triple brackets to render the emoji span as HTML -->
+      <!-- Application for 'job' -->
+        {{{get_emoji}}}
+        <a href='/project/{{job.id}}'>{{job.name}}</a>
+      </h2>
+    <p>
+      <!-- Pass needed_funding value to the helper function -->
+      Paragraph
+    </p>
+    <p> <!-- Applied for 'job' on 'date' -->
+      {{format_date application.applied_on}}
+    </p>
+  </div>
+  <div class="col-md-7">
+    <!-- job description here -->
+    <p>
+      {{ job.description }}
+    </p>
+  </div>
+</div>
+{{/each}}
