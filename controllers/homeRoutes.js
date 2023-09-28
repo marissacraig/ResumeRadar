@@ -40,8 +40,6 @@ router.get('/dashboard', async (req, res) => {
   }
 });
 
-router.get('/project/:id', async (req, res) => {})
-
 // Load signup page
 router.get('/signup', async (req, res) => {})
 

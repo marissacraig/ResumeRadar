@@ -1,30 +1,30 @@
 <section class="p-2">
-            <div class="container d-grid gap-2 col-10" role="group" aria-label="">
-                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                    <button type="button" class="btn btn-primary rounded-pill" href="#">
-                        EDIT APPLICATION
-                    </button>
-                </div>
-                <h3 class="m-6">
-                    {{application.jobTitle}}
-                </h3>
-                <h5 class="mt-4">
-                   {{ application.company }} - {{ application.location }}
-                </h5>
-                <h6 class="mt-4">
-                    {{ application.salary }}
-                </h6>
-                <h6 class="mt-4">
-                    Description
-                </h6>
-                    <p>
-                        {{ application.description }}
-                    </p>
-                <h6 class="mt-4"><a href="{{ application.companyURL }}">
-                    {{ application.companyURL }}
-                </a></h6>
-                <h6 class="mt-4">
-                    {{ application.status }}
-                </h6>
-                
-        </section>
+    <div class="container d-grid gap-2 col-10" role="group" aria-label="">
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button type="button" class="btn btn-primary rounded-pill" onclick="window.location='/application/edit/{{application.id}}'">
+                EDIT APPLICATION
+            </button>
+        </div>
+        <h3 class="m-6">
+            {{application.job.title}}
+        </h3>
+        <h5 class="mt-4">
+            {{ application.job.company }} - {{ application.job.location }}
+        </h5>
+        <h6 class="mt-4">
+            ${{ application.job.salary }}
+        </h6>
+        <h6 class="mt-4">
+            Description
+        </h6>
+        <p>
+            {{ application.job.description }}
+        </p>
+        <h6 class="mt-4"><a href="{{ application.job.url }}">
+                Link to application
+            </a></h6>
+        <h6 class="mt-4">
+            Status: {{ application.status }}
+        </h6>
+
+</section>
