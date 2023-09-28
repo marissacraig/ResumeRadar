@@ -4,8 +4,8 @@
             <div class="container d-grid gap-2 col-6" role="group" aria-label="">
                 <div class="form-group">
                     <label for="jobTitle" class="form-label mt-4">Choose a Job Title</label>
-                    <select class="form-select" id="jobTitle" name="jobTitles">
-                        <option value="">Please Choose One...</option>
+                    <select class="form-select" id="jobTitle" name="jobTitle" onchange='otherJobTitle()' required>
+                        <option value="">Please Choose One</option>
                         <option>Front-end Software Developer</option>
                         <option>Back-end Software Developer</option>
                         <option>Full-stack Software Developer</option>
@@ -26,16 +26,14 @@
                         <option>Development Operations Engineer</option>
                         <option>Chief Technology Officer</option>
                         <option>Software Architect</option>
-                        <option>Other
-                        {{#if option="Other"}}
-                        <input type="text" class="form-control" placeholder="Please specify Job Title" id="otherJobTitle">
-                        {{/if}}
-                        </option>
+                        <option>Other</option>
                     </select>
+                    <input type="text" class="form-control" placeholder="Please specify Job Title" id="otherJobTitle">
+                         
                 </div>
                 <div class="form-group">
                     <label for="company" class="form-label mt-4">Hiring Company</label>
-                    <select class="form-select" id="company">
+                    <select class="form-select" id="company" onchange='otherCompany()' required>
                         <option value="">Please Choose One...</option>
                         <option>Google</option>
                         <option>Apple</option>
@@ -45,16 +43,14 @@
                         <option>Intuit</option>
                         <option>GoFundMe</option>
                         <option>AlwaysAI</option>
-                        <option>Other
-                        {{#if option="Other"}}
-                        <input type="text" class="form-control" placeholder="Please specify Job Company" id="otherCompany">
-                        {{/if}}
-                    </option>
+                        <option>Other</option>
                     </select>
+                    <input type="text" class="form-control" placeholder="Please specify Job Company" id="otherCompany">
+
                 </div>
                 <div class="form-block">
                     <label for="applicationStatus" class="form-label mt-4">Application Status</label>
-                    <select class="form-select" id="applicationStatus">
+                    <select class="form-select" id="status" onchange='otherStatus()' required>
                         <option value="">Please Choose One...</option>
                         <option>Not Applied</option>
                         <option>Applied and awaiting response</option>
@@ -62,15 +58,13 @@
                         <option>Scheduled second interview</option>
                         <option>I am no longer interested</option>
                         <option>Company did not hire me</option>
-                        <option>Other
-                        {{#if option="Other"}}
-                        <input type="text" class="form-control" placeholder="Please specify Job Company" id="otherCompany">
-                        {{/if}}
-                    </option>
+                        <option>Other</option>
                     </select>
+                    <input type="text" class="form-control" placeholder="Please specify application status" id="otherStatus">
+                </div>
                 <div class="form-block">
                     <label for="jobLocation" class="form-label mt-4">Job Location</label>
-                    <input class="form-control" id="jobLocation" placeholder="Enter job location here"></input>
+                    <textarea class="form-control" id="location" rows="1" placeholder="Enter job location here" required></input>
                 </div>
                 <div class="form-block">
                     <label for="companyURL" class="form-label mt-4">Company Website</label>
@@ -78,15 +72,18 @@
                 </div>
                 <div class="form-block">
                     <label for="textarea" class="form-label mt-4">Job Description</label>
-                    <textarea class="form-control" id="textarea" rows="4" placeholder="Copy and Paste job description here"></textarea>
+                    <textarea class="form-control" id="description" rows="4" placeholder="Copy and Paste job description here" required></textarea>
                 </div>
                 <div class="form-block">
                     <label for="textarea" class="form-label mt-4">Salary</label>
-                    <textarea class="form-control" id="textarea" rows="1" placeholder="Enter salary here"></textarea>
+                    <textarea class="form-control" id="salary" rows="1" placeholder="Enter salary here" required></textarea>
                 </div>
             </div>
             <button type="submit" class="btn btn-primary m-4">
                 Submit
             </button>
         </form>
-      </section>
+    </section>
+
+    <script src="/ResumeRadar/public/js/newApplication.js"></script>
+

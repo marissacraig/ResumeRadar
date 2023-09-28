@@ -5,13 +5,13 @@ const verifyPassword = function() {
     const confirmPasswordValue = document.querySelector('#confirm-password-signup').value;
     const passwordValue = document.querySelector('#password-signup').value;
     const message = document.querySelector('#message');
-    if (passwordValue !== confirmPasswordValue || passwordValue === "") {
+    if (passwordValue !== confirmPasswordValue || passwordValue === '') {
         message.innerHTML = 'Password and Confirm Password must match'; 
         message.style.color = 'red';
         btn.disabled = true;
       } else {
         btn.disabled = false;
-        message.innerHTML = "Password and Confirm Password match";
+        message.innerHTML = 'Password and Confirm Password match';
         message.style.color = 'green';
       }
     }; 
