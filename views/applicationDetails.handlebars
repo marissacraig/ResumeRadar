@@ -1,7 +1,7 @@
 <section class="p-2">
     <div class="container d-grid gap-2 col-10" role="group" aria-label="">
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-            <button type="button" class="btn btn-primary rounded-pill" href="#">
+            <button type="button" class="btn btn-primary rounded-pill" onclick="window.location='/application/edit/{{application.id}}'">
                 EDIT APPLICATION
             </button>
         </div>
@@ -12,7 +12,7 @@
             {{ application.job.company }} - {{ application.job.location }}
         </h5>
         <h6 class="mt-4">
-            {{ application.job.salary }}
+            ${{ application.job.salary }}
         </h6>
         <h6 class="mt-4">
             Description
@@ -24,7 +24,7 @@
                 Link to application
             </a></h6>
         <h6 class="mt-4">
-            {{ application.status }}
+            Status: {{ application.status }}
         </h6>
 
 </section>
