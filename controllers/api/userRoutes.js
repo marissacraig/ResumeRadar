@@ -77,4 +77,45 @@ router.post('/logout', (req, res) => {
   
 });
 
+router.post('/signup', async (req, res) => {
+  try {
+    if (req.body.username === undefined) {
+      res.status(400).json({ message: `username is invalid` });
+      return;
+    }
+    if (req.body.password === undefined || req.body.password.length < 8) {
+      res.status(400).json({ message: `password is invalid` });
+      return;
+    }
+    if (req.body.email === undefined) {
+      res.status(400).json({ message: `email is invalid` });
+      return;
+    }
+
+    // check if the username exists
+    const userDataByUsername = await User.findOne({ where: { username: req.body.username } });
+    if (userDataByUsername) {
+      res.status(400).json({ message: `${req.body.username} has already been registered ` });
+      return;
+    }
+
+    // check the email address if exists
+    const userDataByEmail = await User.findOne({ where: { email: req.body.email } });
+    if (userDataByEmail) {
+      res.status(400).json({ message: `${req.body.email} has already been registered ` });
+      return;
+    }
+
+    User.create({
+      username: req.body.username,
+      name: req.body.username,
+      password: req.body.password,
+      email: req.body.email,
+    })
+    res.status(200).json({ message: `${req.body.username} is created successfully ` });
+  } catch (error) {
+    res.status(500).json(error);
+  }
+})
+
 module.exports = router;
