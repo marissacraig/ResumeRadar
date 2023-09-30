@@ -41,7 +41,13 @@ router.get('/dashboard', async (req, res) => {
 });
 
 // Load signup page
-router.get('/signup', async (req, res) => {})
+router.get('/signup', async (req, res) => {
+  if (req.session.logged_in) {
+    res.redirect('/');
+    return;
+  }
+  res.render('signup');
+})
 
 //Load login page
 router.get('/login', (req, res) => {
