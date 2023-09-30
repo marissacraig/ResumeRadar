@@ -28,7 +28,7 @@
                     <option>Software Architect</option>
                     <option>Other</option>
                 </select>
-                <input type="text" class="form-control" placeholder="Please specify Job Title" id="otherJobTitle">
+                <input type="text" class="form-control" placeholder="Please specify Job Title" id="otherJobTitle" style="display: none;">
             </div>
             <div class="form-group">
                 <label for="company" class="form-label mt-4">Hiring Company</label>
@@ -44,7 +44,7 @@
                     <option>AlwaysAI</option>
                     <option>Other</option>
                 </select>
-                <input type="text" class="form-control" placeholder="Please specify Job Company" id="otherCompany">
+                <input type="text" class="form-control" placeholder="Please specify Job Company" id="otherCompany" style="display: none;">
             </div>
             <div class="form-block">
                 <label for="applicationStatus" class="form-label mt-4">Application Status</label>
@@ -58,7 +58,7 @@
                     <option>Company did not hire me</option>
                     <option>Other</option>
                 </select>
-                <input type="text" class="form-control" placeholder="Please specify Job Company" id="otherCompany">
+                <input type="text" class="form-control" placeholder="Please specify Job Company" id="otherStatus" style="display: none;">
                 <div class="form-block">
                     <label for="jobLocation" class="form-label mt-4">Job Location</label>
                     <input class="form-control" id="jobLocation" type="text" placeholder="Enter job location here" value={{application.job.location}}>
@@ -87,5 +87,5 @@
     </form>
 </section>
 
-<script src=""></script>
+<script src="../../js/applicationCheckOther.js"></script>
 <script src=""></script>
