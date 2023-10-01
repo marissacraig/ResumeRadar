@@ -4,11 +4,20 @@ const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, async (req, res) => {
   try {
-    // Pass serialized data and session flag into template
+    const applicationData = await Application.findAll({
+      where: {
+        user_id: req.session.user_id
+      },
+    });
+
+    const applications = applicationData.map((application) => application.get({ plain: true }));
+
     res.render('dashboard', {
-      logged_in: req.session.logged_in,
+      applications,
+      logged_in: req.session.logged_in
     });
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
@@ -18,9 +27,9 @@ router.get('/', withAuth, async (req, res) => {
 router.get('/dashboard', async (req, res) => {
   try {
     const applicationData = await Application.findAll({
-      // where: {
-      //   user_id: req.session.user_id
-      // },
+      where: {
+        user_id: req.session.user_id
+      },
     });
 
     const applications = applicationData.map((application) => application.get({ plain: true }));
