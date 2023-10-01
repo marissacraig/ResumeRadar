@@ -8,7 +8,7 @@ statusElement.visibility = 'hidden';
 function otherJobTitle(val) {
   if (val === 'Other') {
     jobTitleElement.style.visibility = 'visible',
-    jobTitleElement.value = '',
+    jobTitleElement.value = ''
   } else {
     jobTitleElement.style.visibility = 'hidden'
   }
@@ -17,7 +17,7 @@ function otherJobTitle(val) {
 function otherCompany(val) {
     if (val === 'Other') {
       companyElement.style.visibility = 'visible',
-      companyElement.value = '',
+      companyElement.value = ''
     } else {
       companyElement.style.visibility = 'hidden'
     }
@@ -26,7 +26,7 @@ function otherCompany(val) {
   function otherStatus(val) {
     if (val === 'Other') {
       statusElement.style.visibility = 'visible',
-      statusElement.value = '',
+      statusElement.value = ''
     } else {
       statusElement.style.visibility = 'hidden'
     }
@@ -35,16 +35,16 @@ function otherCompany(val) {
 async function newApplicationFormHandler(event) {
     event.preventDefault();
 
-    const title = document.getElementById('#jobTitle').value.trim();
-    const company = document.getElementById('#company').value.trim();
-    const status = document.getElementById('#status').value.trim();
-    const location = document.getElementById('#location').value.trim();
-    const url = document.getElementById('#companyURL').value.trim();
-    const description = document.getElementById('#description').value.trim();
-    const salary = document.getElementById('#salary').value.trim();
+    const title = document.getElementById('jobTitle').value.trim();
+    const company = document.getElementById('company').value.trim();
+    const status = document.getElementById('status').value.trim();
+    const location = document.getElementById('location').value.trim();
+    const url = document.getElementById('companyURL').value.trim();
+    const description = document.getElementById('description').value.trim();
+    const salary = document.getElementById('salary').value.trim();
 
 
-    if (jobTitle && jobCompany && status && location && url && description && salary) {
+    if (title && company && status && location && url && description && salary) {
         const response = await fetch('/api/applications', {
             method: 'POST',
             body: JSON.stringify({ title, company, status, location, url, description, salary }),
@@ -60,4 +60,4 @@ async function newApplicationFormHandler(event) {
 }
 
 
-document.addEventListener('submit', newApplicationFormHandler());
+document.querySelector('.new-application-form').addEventListener('submit', newApplicationFormHandler);
