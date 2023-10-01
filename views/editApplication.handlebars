@@ -5,7 +5,7 @@
             <div class="form-group">
                 <label for="jobTitle" class="form-label mt-4">Choose a Job Title</label>
                 <select class="form-select" id="jobTitle" name="jobTitles">
-                    <option>{{application.job.title}}</option>
+                    <option>{{application.title}}</option>
                     <option>Front-end Software Developer</option>
                     <option>Back-end Software Developer</option>
                     <option>Full-stack Software Developer</option>
@@ -33,7 +33,7 @@
             <div class="form-group">
                 <label for="company" class="form-label mt-4">Hiring Company</label>
                 <select class="form-select" id="company">
-                    <option>{{application.job.company}}</option>
+                    <option>{{application.company}}</option>
                     <option>Google</option>
                     <option>Apple</option>
                     <option>Facebook</option>
@@ -61,22 +61,22 @@
                 <input type="text" class="form-control" placeholder="Please specify Job Company" id="otherStatus" style="display: none;">
                 <div class="form-block">
                     <label for="jobLocation" class="form-label mt-4">Job Location</label>
-                    <input class="form-control" id="jobLocation" type="text" placeholder="Enter job location here" value={{application.job.location}}>
+                    <input class="form-control" id="jobLocation" type="text" placeholder="Enter job location here" value={{application.location}}>
                 </div>
                 <div class="form-block">
                     <label for="companyURL" class="form-label mt-4">Company Website</label>
                     <textarea class="form-control" id="companyURL" rows="1"
-                        placeholder="Copy and Paste company website here">{{application.job.url}}</textarea>
+                        placeholder="Copy and Paste company website here">{{application.url}}</textarea>
                 </div>
                 <div class="form-block">
                     <label for="textarea" class="form-label mt-4">Job Description</label>
                     <textarea class="form-control" id="textarea" rows="4"
-                        placeholder="Copy and Paste job description here">{{application.job.description}}</textarea>
+                        placeholder="Copy and Paste job description here">{{application.description}}</textarea>
                 </div>
                 <div class="form-block">
                     <label for="textarea" class="form-label mt-4">Salary</label>
                     <textarea class="form-control" id="textarea" rows="1"
-                        placeholder="Enter salary here">{{application.job.salary}}</textarea>
+                        placeholder="Enter salary here">{{application.salary}}</textarea>
                 </div>
                 <button type="submit" class="btn btn-primary m-4" href="#">
                     Submit
