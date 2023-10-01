@@ -5,21 +5,21 @@ const withAuth = require('../../utils/auth');
 // CREATE new application
 router.post('/', async (req, res) => {
   try {
-    const jobData = await Job.create({
-      title: req.body.jobTitle,
-      company: req.body.jobCompany,
+    const applicationData = await Application.create({
+      title: req.body.title,
+      company: req.body.company,
+      status: req.body.status,
+      location: req.body.location,
+      url: req.body.url,
       description: req.body.description,
       salary: req.body.salary,
-      location:req.body.location,
-      url: req.body.url
+      user_id: req.session.user_id,
     });
 
-    const applicationData = await Application.create({
-
-    })
+    res.status(200).json(applicationData);
   } catch (err) {
-    
+    res.status(500).json(err);
   }
-})
+});
 
 module.exports = router;

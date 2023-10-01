@@ -35,8 +35,8 @@ function otherCompany(val) {
 async function newApplicationFormHandler(event) {
     event.preventDefault();
 
-    const jobTitle = document.getElementById('#jobTitle').value.trim();
-    const jobCompany = document.getElementById('#company').value.trim();
+    const title = document.getElementById('#jobTitle').value.trim();
+    const company = document.getElementById('#company').value.trim();
     const status = document.getElementById('#status').value.trim();
     const location = document.getElementById('#location').value.trim();
     const url = document.getElementById('#companyURL').value.trim();
@@ -45,9 +45,9 @@ async function newApplicationFormHandler(event) {
 
 
     if (jobTitle && jobCompany && status && location && url && description && salary) {
-        const response = await fetch('/api/users', {
+        const response = await fetch('/api/applications', {
             method: 'POST',
-            body: JSON.stringify({ jobTitle, jobCompany, status, location, url, description, salary }),
+            body: JSON.stringify({ title, company, status, location, url, description, salary }),
             headers: { 'Content-Type': 'application/json' },
         });
 
