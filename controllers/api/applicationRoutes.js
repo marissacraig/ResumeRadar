@@ -51,4 +51,25 @@ router.put('/:id', async (req, res) => {
   }
 });
 
+// DELETE application
+router.delete('/:id', async (req, res) => {
+  try {
+    const applicationData = await Application.destroy({
+      where: {
+        id: req.params.id
+      }
+    });
+
+    if (!applicationData) {
+      res.status(404).json({ message: 'No application found with this id' });
+      return;
+    }
+
+    res.status(200).json(applicationData);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;
