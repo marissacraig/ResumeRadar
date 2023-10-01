@@ -1,16 +1,16 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
-router.get("/", async (req, res) => { 
+router.get('/', async (req, res) => { 
   try { 
     const userData = await User.findAll({
-      attributes: { exclude: ["password"] },
+      attributes: { exclude: ['password'] }
     });
     res.status(200).json(userData);
   } catch (err) {res.status(500).json(err) }
 })
 
-router.get("/:id", async (req, res) => { 
+router.get('/:id', async (req, res) => { 
 
 })
 
@@ -36,9 +36,8 @@ router.post('/login', async (req, res) => {
     const userData = await User.findOne({ where: { username: req.body.username } });
 
     if (!userData) {
-      res
-        .status(400)
-        .json({ message: `${req.body.username} is not a valid username` });
+      res.status(400)
+      res.json({ message: `${req.body.username} is not a valid username` });
       return;
     }
 
@@ -108,7 +107,7 @@ router.post('/signup', async (req, res) => {
 
     User.create({
       username: req.body.username,
-      name: req.body.username,
+      name: req.body.name,
       password: req.body.password,
       email: req.body.email,
     })
