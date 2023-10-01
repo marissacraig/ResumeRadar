@@ -9,6 +9,13 @@ async function editApplicationFormHandler(event) {
     const description = document.getElementById('description').value.trim();
     const salary = document.getElementById('salary').value.trim();
 
+    //get id of application
+    const id = window.location.toString().split('/')[
+      window.location.toString().split('/').length-1
+    ];
+
+    console.log(id);
+
     // Get custom text input values for fields that have "other" option selected
     if (title == "Other") {
       title = document.getElementById('otherJobTitle').value.trim();;
@@ -21,7 +28,7 @@ async function editApplicationFormHandler(event) {
     }
 
     if (title && company && status && location && url && description && salary) {
-        const response = await fetch('/api/applications', {
+        const response = await fetch(`/api/applications/${id}`, {
             method: 'PUT',
             body: JSON.stringify({ title, company, status, location, url, description, salary }),
             headers: { 'Content-Type': 'application/json' },
