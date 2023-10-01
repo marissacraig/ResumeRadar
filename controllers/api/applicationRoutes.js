@@ -17,6 +17,8 @@ router.post('/', async (req, res) => {
     const applicationData = await Application.create({
 
     })
+  } catch (err) {
+    
   }
 })
 
