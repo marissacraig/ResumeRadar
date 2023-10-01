@@ -21,6 +21,7 @@ To use the ResumeRadar, follow these steps:
 * Login in
 * Add your first application
 * Once completed, the website will store your information and track it in the future
+  
 ![](https://github.com/marissacraig/ResumeRadar/blob/julie0327-patch-1/signup.png)
 
 ## Contributing
