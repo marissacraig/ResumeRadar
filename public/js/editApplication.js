@@ -1,4 +1,4 @@
-async function newApplicationFormHandler(event) {
+async function editApplicationFormHandler(event) {
     event.preventDefault();
 
     let title = document.getElementById('jobTitle').value.trim();
@@ -8,6 +8,13 @@ async function newApplicationFormHandler(event) {
     const url = document.getElementById('companyURL').value.trim();
     const description = document.getElementById('description').value.trim();
     const salary = document.getElementById('salary').value.trim();
+
+    //get id of application
+    const id = window.location.toString().split('/')[
+      window.location.toString().split('/').length-1
+    ];
+
+    console.log(id);
 
     // Get custom text input values for fields that have "other" option selected
     if (title == "Other") {
@@ -21,8 +28,8 @@ async function newApplicationFormHandler(event) {
     }
 
     if (title && company && status && location && url && description && salary) {
-        const response = await fetch('/api/applications', {
-            method: 'POST',
+        const response = await fetch(`/api/applications/${id}`, {
+            method: 'PUT',
             body: JSON.stringify({ title, company, status, location, url, description, salary }),
             headers: { 'Content-Type': 'application/json' },
         });
@@ -35,4 +42,4 @@ async function newApplicationFormHandler(event) {
     }
 }
 
-document.querySelector('.new-application-form').addEventListener('submit', newApplicationFormHandler);
+document.querySelector('.edit-application-form').addEventListener('submit', editApplicationFormHandler);

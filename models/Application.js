@@ -11,6 +11,26 @@ Application.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    title: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    company: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    description: {
+      type: DataTypes.STRING,
+    },
+    salary: {
+      type: DataTypes.INTEGER,
+    },
+    location: {
+      type: DataTypes.STRING,
+    },
+    url: {
+      type: DataTypes.STRING,
+    },
     status: {
       type: DataTypes.STRING,
     },
@@ -21,14 +41,7 @@ Application.init(
         model: 'user',
         key: 'id',
       },
-    },
-    job_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'job',
-        key: 'id',
-      },
-    },
+    }
   },
   {
     sequelize,

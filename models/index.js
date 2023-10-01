@@ -1,5 +1,4 @@
 const User = require('./User');
-const Job = require('./Job');
 const Application = require('./Application');
 
 // one user has many applications
@@ -11,14 +10,4 @@ Application.belongsTo(User, {
   foreignKey: 'user_id',
 });
 
-// each application associated with one job
-Application.belongsTo(Job, {
-  foreignKey: 'job_id',
-  onDelete: 'RESTRICT',
-});
-Job.hasOne(Application, {
-  foreignKey: 'job_id',
-  onDelete: 'CASCADE',
-});
-
-module.exports = { User, Application, Job };
+module.exports = { User, Application };

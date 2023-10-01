@@ -1,12 +1,22 @@
 [
     {
       "status": "Applied",
-      "user_id": 1,
-      "job_id": 1
+      "title": "Software Engineer",
+      "company": "Google",
+      "description": "Use programming languages like Python, Java, C++, and others to implement the design.",
+      "salary": 100000,
+      "location": "San Diego",
+      "url": "https://www.linkedin.com/jobs/view/staff-software-engineer-watch-system-software-pixel-at-google-3711772760?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "user_id": 1
     },
     {
       "status": "Offered interview",
-      "user_id": 1,
-      "job_id": 2
+      "title": "Developer (Junior Level)",
+      "company": "SynergisticIT",
+      "description": "Required skills: Experience in Java, knowledge of statistics, SAS, Python, Computer Vision, and data visualization tools",
+      "salary": 100000,
+      "location": "Remote",
+      "url": "https://www.linkedin.com/jobs/view/developer-junior-level-remote-at-synergisticit-3715204981?refId=TWENoCbZp1Fi6pksueHeNg%3D%3D&trackingId=5KBatG%2BHhTaNVAE5v9zUTw%3D%3D&trk=public_jobs_topcard-title",
+      "user_id": 1
     }
   ]
