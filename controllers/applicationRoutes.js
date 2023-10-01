@@ -2,6 +2,11 @@ const router = require('express').Router();
 const { Application, User } = require('../models');
 const withAuth = require('../utils/auth');
 
+// GET new application
+router.get('/new', withAuth, async (req, res) => {
+  res.render('newApplication');
+});
+
 // GET application details page by id
 router.get('/:id', withAuth, async (req, res) => {
   try {
@@ -46,9 +51,5 @@ router.get('/edit/:id', withAuth, async (req, res) => {
   }
 });
 
-// GET new application
-router.get('/new', withAuth, async (req, res) => {
-  res.render('newApplication');
-});
 
 module.exports = router;
