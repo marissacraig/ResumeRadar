@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Application, User, Job } = require('../models');
+const { Application, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, async (req, res) => {
@@ -21,11 +21,6 @@ router.get('/dashboard', async (req, res) => {
       // where: {
       //   user_id: req.session.user_id
       // },
-      include: [
-        {
-          model: Job,
-        }
-      ]
     });
 
     const applications = applicationData.map((application) => application.get({ plain: true }));

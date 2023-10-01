@@ -30,4 +30,4 @@ function otherStatus(event) {
 
 document.getElementById("jobTitle").addEventListener("change", otherJobTitle);
 document.getElementById("company").addEventListener("change", otherCompany);
-document.getElementById("applicationStatus").addEventListener("change", otherStatus);
+document.getElementById("status").addEventListener("change", otherStatus);

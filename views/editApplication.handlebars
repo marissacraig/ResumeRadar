@@ -1,82 +1,82 @@
 <section class="text-center p-2">
-    <form>
+    <form class="edit-application-form">
         <h4>Edit Application</h4>
         <div class="container d-grid gap-2 col-6" role="group" aria-label="">
             <div class="form-group">
                 <label for="jobTitle" class="form-label mt-4">Choose a Job Title</label>
                 <select class="form-select" id="jobTitle" name="jobTitles">
-                    <option>{{application.job.title}}</option>
-                    <option>Front-end Software Developer</option>
-                    <option>Back-end Software Developer</option>
-                    <option>Full-stack Software Developer</option>
-                    <option>Software Engineer</option>
-                    <option>Network Administrator</option>
-                    <option>Web Developer</option>
-                    <option>Systems Analyst</option>
-                    <option>Quality Assurance Engineer</option>
-                    <option>Database Administrator</option>
-                    <option>PHP Developer</option>
-                    <option>Software Test Engineer</option>
-                    <option>Security Engineer</option>
-                    <option>Java Developer</option>
-                    <option>Hardware Engineer</option>
-                    <option>Python Developer</option>
-                    <option>Lead Developer</option>
-                    <option>Mobile Developer</option>
-                    <option>Development Operations Engineer</option>
-                    <option>Chief Technology Officer</option>
-                    <option>Software Architect</option>
-                    <option>Other</option>
+                    <option value={{application.title}}>{{application.title}}</option>
+                    <option value="Front-end Software Developer">Front-end Software Developer</option>
+                    <option value="Back-end Software Developer">Back-end Software Developer</option>
+                    <option value="Full-stack Software Developer">Full-stack Software Developer</option>
+                    <option value="Software Engineer">Software Engineer</option>
+                    <option value="Network Administrator">Network Administrator</option>
+                    <option value="Web Developer">Web Developer</option>
+                    <option value="Systems Analyst">Systems Analyst</option>
+                    <option value="Quality Assurance Engineer">Quality Assurance Engineer</option>
+                    <option value="Database Administrator">Database Administrator</option>
+                    <option value="PHP Developer">PHP Developer</option>
+                    <option value="Software Test Engineer">Software Test Engineer</option>
+                    <option value="Security Engineer">Security Engineer</option>
+                    <option value="Java Developer">Java Developer</option>
+                    <option value="Hardware Engineer">Hardware Engineer</option>
+                    <option value="Python Developer">Python Developer</option>
+                    <option value="Lead Developer">Lead Developer</option>
+                    <option value="Mobile Developer">Mobile Developer</option>
+                    <option value="Development Operations Engineer">Development Operations Engineer</option>
+                    <option value="Chief Technology Officer">Chief Technology Officer</option>
+                    <option value="Software Architect">Software Architect</option>
+                    <option value="Other">Other</option>
                 </select>
                 <input type="text" class="form-control" placeholder="Please specify Job Title" id="otherJobTitle" style="display: none;">
             </div>
             <div class="form-group">
                 <label for="company" class="form-label mt-4">Hiring Company</label>
                 <select class="form-select" id="company">
-                    <option>{{application.job.company}}</option>
-                    <option>Google</option>
-                    <option>Apple</option>
-                    <option>Facebook</option>
-                    <option>Qualcomm</option>
-                    <option>BAE Systems</option>
-                    <option>Intuit</option>
-                    <option>GoFundMe</option>
-                    <option>AlwaysAI</option>
-                    <option>Other</option>
+                    <option>{{application.company}}</option>
+                    <option value="Google">Google</option>
+                    <option value="Apple">Apple</option>
+                    <option value="Facebook">Facebook</option>
+                    <option value="Qualcomm">Qualcomm</option>
+                    <option value="BAE Systems">BAE Systems</option>
+                    <option value="Intuit">Intuit</option>
+                    <option value="GoFundMe">GoFundMe</option>
+                    <option value="AlwaysAI">AlwaysAI</option>
+                    <option value="Other">Other</option>
                 </select>
                 <input type="text" class="form-control" placeholder="Please specify Job Company" id="otherCompany" style="display: none;">
             </div>
             <div class="form-block">
-                <label for="applicationStatus" class="form-label mt-4">Application Status</label>
-                <select class="form-select" id="applicationStatus">
+                <label for="status" class="form-label mt-4">Application Status</label>
+                <select class="form-select" id="status">
                     <option>{{application.status}}</option>
-                    <option>Not Applied</option>
-                    <option>Applied and awaiting response</option>
-                    <option>Scheduled first interview</option>
-                    <option>Scheduled second interview</option>
-                    <option>I am no longer interested</option>
-                    <option>Company did not hire me</option>
-                    <option>Other</option>
+                    <option value="Not Applied">Not Applied</option>
+                    <option value="Applied and awaiting response">Applied and awaiting response</option>
+                    <option value="Scheduled first interview">Scheduled first interview</option>
+                    <option value="Scheduled second interview">Scheduled second interview</option>
+                    <option value="I am no longer interested">I am no longer interested</option>
+                    <option value="Company did not hire me">Company did not hire me</option>
+                    <option value="Other">Other</option>
                 </select>
                 <input type="text" class="form-control" placeholder="Please specify Job Company" id="otherStatus" style="display: none;">
                 <div class="form-block">
-                    <label for="jobLocation" class="form-label mt-4">Job Location</label>
-                    <input class="form-control" id="jobLocation" type="text" placeholder="Enter job location here" value={{application.job.location}}>
+                    <label for="location" class="form-label mt-4">Job Location</label>
+                    <input class="form-control" id="location" type="text" placeholder="Enter job location here" value={{application.location}}>
                 </div>
                 <div class="form-block">
                     <label for="companyURL" class="form-label mt-4">Company Website</label>
                     <textarea class="form-control" id="companyURL" rows="1"
-                        placeholder="Copy and Paste company website here">{{application.job.url}}</textarea>
+                        placeholder="Copy and Paste company website here">{{application.url}}</textarea>
                 </div>
                 <div class="form-block">
-                    <label for="textarea" class="form-label mt-4">Job Description</label>
-                    <textarea class="form-control" id="textarea" rows="4"
-                        placeholder="Copy and Paste job description here">{{application.job.description}}</textarea>
+                    <label for="description" class="form-label mt-4">Job Description</label>
+                    <textarea class="form-control" id="description" rows="4"
+                        placeholder="Copy and Paste job description here">{{application.description}}</textarea>
                 </div>
                 <div class="form-block">
-                    <label for="textarea" class="form-label mt-4">Salary</label>
-                    <textarea class="form-control" id="textarea" rows="1"
-                        placeholder="Enter salary here">{{application.job.salary}}</textarea>
+                    <label for="salary" class="form-label mt-4">Salary</label>
+                    <textarea class="form-control" id="salary" rows="1"
+                        placeholder="Enter salary here">{{application.salary}}</textarea>
                 </div>
                 <button type="submit" class="btn btn-primary m-4" href="#">
                     Submit
@@ -88,4 +88,4 @@
 </section>
 
 <script src="../../js/applicationCheckOther.js"></script>
-<script src=""></script>
+<script src="../../js/editApplication.js"></script>
