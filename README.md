@@ -24,6 +24,7 @@ To use the ResumeRadar, follow these steps:
   
 ![](https://github.com/marissacraig/ResumeRadar/blob/julie0327-patch-1/signup.png)
 
+
 https://resume-radar-eeacc5a0ba4b.herokuapp.com/login
 
 ## Contributing
