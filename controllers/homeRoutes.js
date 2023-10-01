@@ -5,7 +5,7 @@ const withAuth = require('../utils/auth');
 router.get('/', withAuth, async (req, res) => {
   try {
     // Pass serialized data and session flag into template
-    res.render('homepage', {
+    res.render('dashboard', {
       logged_in: req.session.logged_in,
     });
   } catch (err) {
@@ -44,7 +44,7 @@ router.get('/signup', async (req, res) => {
   res.render('signup');
 })
 
-//Load login page
+// Load login page
 router.get('/login', (req, res) => {
   if (req.session.logged_in) {
     res.redirect('/');
