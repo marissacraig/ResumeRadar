@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume Radar</title>
+    <link rel="icon" type="image/x-icon" href="/assets/resume-radar-logo.png">
+    <link rel="stylesheet" href="/css/jass.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <!-- Bootstrap minified CSS link-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/lux/bootstrap.min.css"
+      integrity="sha384-9+PGKSqjRdkeAU7Eu4nkJU8RFaH8ace8HGXnkiKMP9I9Te0GJ4/km3L1Z8tXigpG"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+      <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="secondary">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+              <img
+                src="/assets/resume-radar-logo.png"
+                alt="Logo"
+                width="60"
+                height="60"
+              />
+            </a>
+            <h5 class="m-5" style="max-width: 20rem;">RESUME RADAR</h5>
+          <!-- Conditionally render links -->
+          <!-- {{#if logged_in}} -->
+          <button class="navbar-toggler btn-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-label="Toggle navigation">
+            <span class="navbar-toggler-header">MENU</span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav me-auto">
+             <li class="nav-item">
+              <a class="nav-link" href="/">DASHBOARD</a>
+             </li>
+             <li class="nav-item">
+              <a class="nav-link" href="#">RESUME REVIEW</a>
+             </li>
+             <li class="nav-item">
+              <a class="nav-link" href="/settings">SETTINGS</a>
+           </li>
+            </ul>
+           </div>
+           </div>
+          </nav>
+        </div>
+      </header>
+<div class="row m-4">
+  <div class="col-auto">
+    <h2>Welcome, {$user.name}!</h2>
+  </div>
+</div>
+
+<div class="row m-4 text-center justify-content-center">
+  <div class="col-md-8">
+    <h3>Account Information</h3>
+
+    <form class="form new-project-form">
+      <div class="form-group">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="{$user.name}" aria-label="name" aria-describedby="button-addon2">
+          <button class="btn btn-primary" type="button" id="button-addon2">Edit</button>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="{$user.username}" aria-label="username" aria-describedby="button-addon2">
+          <button class="btn btn-primary" type="button" id="button-addon2">Edit</button>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="{$user.email}" aria-label="email" aria-describedby="button-addon2">
+          <button class="btn btn-primary" type="button" id="button-addon2">Edit</button>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="password" aria-label="password" aria-describedby="button-addon2">
+          <button class="btn btn-primary" type="button" id="button-addon2">Edit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="col-md-6 delete-account">
+   
+    <div class="row m-4">
+      <div class="col-md-8">
+        <h4>Delete Account</h4>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{user.id}}">
+          DELETE
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/account.js"></script>
