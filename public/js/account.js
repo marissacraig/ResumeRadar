@@ -18,16 +18,15 @@ async function editPasswordFormHandler(event) {
       company = document.getElementById('otherCompany').value.trim();
     }
    
-
     if (password) {
       const response = await fetch(`/api/applications/${id}`, {
         method: 'PUT',
-        body: JSON.stringify({ title, company, status, location, url, description, salary }),
+        body: JSON.stringify({ password }),
         headers: { 'Content-Type': 'application/json' },
       });
   
       if (response.ok) {
-        document.location.replace('/dashboard');
+        document.location.replace('/account');
       } else {
         alert(response.statusText);
       }
