@@ -1,15 +1,9 @@
-async function editApplicationFormHandler(event) {
+async function editPasswordFormHandler(event) {
     event.preventDefault();
   
-    let title = document.getElementById('jobTitle').value.trim();
-    let company = document.getElementById('company').value.trim();
-    let status = document.getElementById('status').value.trim();
-    const location = document.getElementById('location').value.trim();
-    const url = document.getElementById('companyURL').value.trim();
-    const description = document.getElementById('description').value.trim();
-    const salary = document.getElementById('salary').value.trim();
-  
-    //get id of application
+    let password = document.getElementById('').value.trim();
+    
+    // Get id of user
     const id = window.location.toString().split('/')[
       window.location.toString().split('/').length - 1
     ];
@@ -17,17 +11,15 @@ async function editApplicationFormHandler(event) {
     console.log(id);
   
     // Get custom text input values for fields that have "other" option selected
-    if (title == "Other") {
-      title = document.getElementById('otherJobTitle').value.trim();;
+    if (!password) {
+      alert('Please enter a new password')
     }
     if (company == "Other") {
       company = document.getElementById('otherCompany').value.trim();
     }
-    if (status == "Other") {
-      status = document.getElementById('otherStatus').value.trim();
-    }
-  
-    if (title && company && status && location && url && description && salary) {
+   
+
+    if (password) {
       const response = await fetch(`/api/applications/${id}`, {
         method: 'PUT',
         body: JSON.stringify({ title, company, status, location, url, description, salary }),
@@ -70,7 +62,8 @@ async function editApplicationFormHandler(event) {
       }
     }}}
   
-  document.querySelector('.edit-application-form')
-  .addEventListener('submit', editApplicationFormHandler);
+  document.querySelector('edit-password')
+  .addEventListener('submit', editPasswordFormHandler);
+
   const deleteAccount = document.querySelector('#delete-account');
   deleteAccount.addEventListener('click', deleteAccountBtn);
