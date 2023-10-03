@@ -65,16 +65,21 @@ router.get('/login', (req, res) => {
 // Load Account page
 router.get('/account', async (req, res) => {
   try {
-    const userAccount = await User.findAll({
+    const userData = await User.findOne({
       where: {
-        user_id: req.session.user_id
-      },
+        id: req.session.user_id
+      }
     });
 
-    const userData = userData.map((userAccount) => userAccount.get({ plain: true }));
+    if (!userData) {
+      res.status(404).json({ message: 'No user found with this id!' });
+      return;
+    }
+
+    const user = userData.get({ plain: true });
 
     res.render('account', {
-      userData,
+      user,
       logged_in: req.session.logged_in
     });
   } catch (err) {
