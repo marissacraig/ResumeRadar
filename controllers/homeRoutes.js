@@ -83,4 +83,14 @@ router.get('/account', async (req, res) => {
   }
 });
 
+router.get('/resources', async (req, res) => {
+  try {
+    res.render('resources', {
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
 module.exports = router;
