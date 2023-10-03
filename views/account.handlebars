@@ -8,49 +8,77 @@
   <div class="col-md-8">
     <h3>Account Information</h3>
 
-    <form class="form new-project-form">
-      <div class="form-group">
+    <form class="form account-form">
+      <div class="form-group mt-4">
         <div class="input-group">
-          <input type="text" class="form-control" placeholder="{{user.name}}" aria-label="name" aria-describedby="button-addon2">
-          <button class="btn btn-primary" type="button" id="edit-name">Edit</button>
+          <h4>Name: {{user.name}}</h4>
+          <span>
+            <button class="btn btn-sm btn-primary" type="button" id="edit-name">Edit</button>
+          </span>
         </div>
+        <input type="text" class="form-control" placeholder="New Name"
+                    id="newName" style="display: none;">
+        <button type="submit" class="btn btn-primary m-4" style="display: none;">
+          Submit
+        </button>
       </div>
-      <div class="form-group">
+      <div class="form-group mt-4">
         <div class="input-group">
-          <input type="text" class="form-control" placeholder="{{user.username}}" aria-label="username" aria-describedby="button-addon2">
-          <button class="btn btn-primary" type="button" id="edit-username">Edit</button>
+          <h4>Username: {{user.username}}</h4>
+          <span>
+            <button class="btn btn-sm btn-primary" type="button" id="edit-username">Edit</button>
+          </span>
         </div>
+        <input type="text" class="form-control" placeholder="New Username"
+                    id="newUsername" style="display: none;">
+        <button type="submit" class="btn btn-primary m-4" style="display: none;">
+          Submit
+        </button>
       </div>
-      <div class="form-group">
+      <div class="form-group mt-4">
         <div class="input-group">
-          <input type="text" class="form-control" placeholder="{{user.email}}" aria-label="email" aria-describedby="button-addon2">
-          <button class="btn btn-primary" type="button" id="edit-email">Edit</button>
+          <h4>Email: {{user.email}}</h4>
+          <span>
+            <button class="btn btn-sm btn-primary" type="button" id="edit-email">Edit</button>
+          </span>
         </div>
+        <input type="text" class="form-control" placeholder="New Email"
+                    id="newEmail" style="display: none;">
+        <button type="submit" class="btn btn-primary m-4" style="display: none;">
+          Submit
+        </button>
       </div>
-      <div class="form-group">
+      <div class="form-group mt-4">
         <div class="input-group">
-          <h6>Password</h6>
-          <button class="btn btn-primary" type="button" id="edit-password">Edit</button>
+          <h4>Password</h4>
+          <span>
+            <button class="btn btn-sm btn-primary" type="button" id="edit-password">Edit</button>
+          </span>
         </div>
-        <input type="text" class="form-control" placeholder="Password"
-                    id="editPassword" style="display: none;">
+        <input type="text" class="form-control" placeholder="New Password"
+                    id="newPassword" style="display: none;">
+        <input type="text" class="form-control" placeholder="Confirm New Password"
+                    id="confirmNewPassword" onkeyup='verifyPassword();' style="display: none;">
+                    <span id="message" ></span>
+        <button type="submit" class="btn btn-primary m-4" style="display: none;">
+          Submit
+        </button>
+        </div>
       </div>
     </form>
   </div>
 
-  <div class="col-md-6 delete-account">
-   
-    <div class="row m-4">
-      <div class="col-md-8">
+    <div class="row m-4 delete-account justify-content-center">
+      <div class="m-2">
         <h4>Delete Account</h4>
       </div>
-      <div class="col-md-4">
+      <div class="m-2">
         <button class="btn btn-sm btn-danger" data-id="{{user.id}}">
           DELETE
         </button>
       </div>
     </div>
-  </div>
+  
 </div>
 
 <script src="/js/account.js"></script>
