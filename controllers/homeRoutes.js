@@ -62,4 +62,25 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+// Load Account page
+router.get('/account', async (req, res) => {
+  try {
+    const userAccount = await User.findAll({
+      where: {
+        user_id: req.session.user_id
+      },
+    });
+
+    const userData = userData.map((userAccount) => userAccount.get({ plain: true }));
+
+    res.render('account', {
+      userData,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;
