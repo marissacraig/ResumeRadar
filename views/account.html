@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume Radar</title>
+    <link rel="icon" type="image/x-icon" href="/assets/resume-radar-logo.png">
+    <link rel="stylesheet" href="/css/jass.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <!-- Bootstrap minified CSS link-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/lux/bootstrap.min.css"
+      integrity="sha384-9+PGKSqjRdkeAU7Eu4nkJU8RFaH8ace8HGXnkiKMP9I9Te0GJ4/km3L1Z8tXigpG"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+      <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="secondary">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+              <img
+                src="/assets/resume-radar-logo.png"
+                alt="Logo"
+                width="60"
+                height="60"
+              />
+            </a>
+            <h5 class="m-5" style="max-width: 20rem;">RESUME RADAR</h5>
+          <!-- Conditionally render links -->
+          <!-- {{#if logged_in}} -->
+          <button class="navbar-toggler btn-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-label="Toggle navigation">
+            <span class="navbar-toggler-header">MENU</span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav me-auto">
+             <li class="nav-item">
+              <a class="nav-link" href="/">DASHBOARD</a>
+             </li>
+             <li class="nav-item">
+              <a class="nav-link" href="#">RESUME REVIEW</a>
+             </li>
+             <li class="nav-item">
+              <a class="nav-link" href="/account">ACCOUNT</a>
+           </li>
+            </ul>
+           </div>
+           </div>
+          </nav>
+        </div>
+      </header>
+<div class="row m-4">
+  <div class="col-auto">
+    <h2>Welcome, {{user.name}}!</h2>
+  </div>
+</div>
+
+<div class="row m-4 text-center justify-content-center">
+  <div class="col-md-8">
+    <h3>Account Information</h3>
+
+    <form class="form account-form">
+      <div class="form-group mt-4">
+        <div class="input-group">
+          <h4>Name: {{user.name}}</h4>
+          <span>
+            <button class="btn btn-sm btn-primary" type="button" id="edit-name">Edit</button>
+          </span>
+        </div>
+        <input type="text" class="form-control" placeholder="New Name"
+                    id="newName" style="display: none;">
+        <button type="submit" class="btn btn-primary m-4" style="display: none;">
+          Submit
+        </button>
+      </div>
+      <div class="form-group mt-4">
+        <div class="input-group">
+          <h4>Username: {{user.username}}</h4>
+          <span>
+            <button class="btn btn-sm btn-primary" type="button" id="edit-username">Edit</button>
+          </span>
+        </div>
+        <input type="text" class="form-control" placeholder="New Username"
+                    id="newUsername" style="display: none;">
+        <button type="submit" class="btn btn-primary m-4" style="display: none;">
+          Submit
+        </button>
+      </div>
+      <div class="form-group mt-4">
+        <div class="input-group">
+          <h4>Email: {{user.email}}</h4>
+          <span>
+            <button class="btn btn-sm btn-primary" type="button" id="edit-email">Edit</button>
+          </span>
+        </div>
+        <input type="text" class="form-control" placeholder="New Email"
+                    id="newEmail" style="display: none;">
+        <button type="submit" class="btn btn-primary m-4" style="display: none;">
+          Submit
+        </button>
+      </div>
+      <div class="form-group mt-4">
+        <div class="input-group">
+          <h4>Password</h4>
+          <span>
+            <button class="btn btn-sm btn-primary" type="button" id="edit-password">Edit</button>
+          </span>
+        </div>
+        <input type="text" class="form-control" placeholder="New Password"
+                    id="newPassword" style="display: none;">
+        <input type="text" class="form-control" placeholder="Confirm New Password"
+                    id="confirmNewPassword" onkeyup='verifyPassword();' style="display: none;">
+                    <span id="message" ></span>
+        <button type="submit" class="btn btn-primary m-4" style="display: none;">
+          Submit
+        </button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+    <div class="row m-4 delete-account justify-content-center">
+      <div class="m-2">
+        <h4>Delete Account</h4>
+      </div>
+      <div class="m-2">
+        <button class="btn btn-sm btn-danger" data-id="{{user.id}}">
+          DELETE
+        </button>
+      </div>
+    </div>
+  
+</div>
+
+<script src="/js/account.js"></script>
