@@ -65,7 +65,7 @@
         <div class="input-group">
           <h4>Name: {{user.name}}</h4>
           <span>
-            <button class="btn btn-sm btn-primary" type="button" id="edit-password">Edit</button>
+            <button class="btn btn-sm btn-primary" type="button" id="edit-name">Edit</button>
           </span>
         </div>
         <input type="text" class="form-control" placeholder="New Name"
@@ -78,7 +78,7 @@
         <div class="input-group">
           <h4>Username: {{user.username}}</h4>
           <span>
-            <button class="btn btn-sm btn-primary" type="button" id="edit-password">Edit</button>
+            <button class="btn btn-sm btn-primary" type="button" id="edit-username">Edit</button>
           </span>
         </div>
         <input type="text" class="form-control" placeholder="New Username"
@@ -91,7 +91,7 @@
         <div class="input-group">
           <h4>Email: {{user.email}}</h4>
           <span>
-            <button class="btn btn-sm btn-primary" type="button" id="edit-password">Edit</button>
+            <button class="btn btn-sm btn-primary" type="button" id="edit-email">Edit</button>
           </span>
         </div>
         <input type="text" class="form-control" placeholder="New Email"
@@ -110,7 +110,8 @@
         <input type="text" class="form-control" placeholder="New Password"
                     id="newPassword" style="display: none;">
         <input type="text" class="form-control" placeholder="Confirm New Password"
-                    id="confirmNewPassword" style="display: none;">
+                    id="confirmNewPassword" onkeyup='verifyPassword();' style="display: none;">
+                    <span id="message" ></span>
         <button type="submit" class="btn btn-primary m-4" style="display: none;">
           Submit
         </button>
